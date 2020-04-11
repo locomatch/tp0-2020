@@ -34,7 +34,7 @@ int main(void)
 
 	/*---------------------------------------------------PARTE 3-------------------------------------------------------------*/
 
-	//antes de continuar, tenemos que asegurarnos que el servidor esté corriendo porque lo necesitaremos para lo que sigue.
+	//antes de continuar, tenemos que asegurarnos que el servidor est�� corriendo porque lo necesitaremos para lo que sigue.
 
 	//crear conexion
 
@@ -66,7 +66,7 @@ int main(void)
 //TODO
 t_log* iniciar_logger(void)
 {
-	t_log* log = log_create("tp0.log", "/home/utnso/SANTI/Game-watch-client/", true, LOG_LEVEL_INFO);
+	t_log* log = log_create("tp0.log", "", true, LOG_LEVEL_INFO);
 
 	return log;
 }
@@ -76,9 +76,7 @@ t_config* leer_config(void)
 {
 	t_config* config;
 
-    config = config_create("/home/utnso/SANTI/Game-watch-client/tp0.config");
-//	config_save_in_file(config, "/home/utnso/SANTI/Game-watch-client/tpCopia.config");
-
+    config = config_create("tp0.config");
 
 	return config;
 }

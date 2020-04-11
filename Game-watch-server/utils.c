@@ -64,7 +64,7 @@ void serve_client(int* socket)
 }
 
 void process_request(int cod_op, int cliente_fd) {
-	printf("Llego %d \n", cod_op);
+	printf("Llego un cliente, quiere %dkg de papas \n", cod_op);
 	int size;
 	void* msg;
 		switch (cod_op) {
@@ -73,8 +73,8 @@ void process_request(int cod_op, int cliente_fd) {
 			msg = recibir_mensaje(cliente_fd, &size);
 			mensaje = malloc(size);
 			memcpy(mensaje, msg, size);
-			loggerServer = log_create("tp0.log", "/home/utnso/SANTI/Game-watch-server/", true, LOG_LEVEL_INFO);
-			log_info(loggerServer, "LOGGERLOGGERLOGGER");
+			loggerServer = log_create("tp0.log", "", true, LOG_LEVEL_INFO);
+			log_info(loggerServer, "i'm a cool logger\n");
 			log_info(loggerServer, mensaje);
 			devolver_mensaje(msg, size, cliente_fd);
 			free(msg);
